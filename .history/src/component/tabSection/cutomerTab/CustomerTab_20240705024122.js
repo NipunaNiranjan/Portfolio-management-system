@@ -40,6 +40,9 @@ export default function CustomerTab() {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error.message}</div>;
 
+  const containerHeight =
+    filteredCustomers.length > MAX_CARDS_WITHOUT_SCROLL ? "75vh" : "auto";
+
   return (
     <CustomerDataWrapper>
       <Box
@@ -48,6 +51,7 @@ export default function CustomerTab() {
           flexDirection: "row",
           gap: "2rem",
           width: "100%",
+          height: containerHeight,
           "@media (max-width: 800px)": {
             flexDirection: "column",
             alignItems: "center",
@@ -57,7 +61,7 @@ export default function CustomerTab() {
         <Box
           sx={{
             width: "52vw",
-            height: "75vh", // Set a fixed height for the map container
+            height: containerHeight,
             "@media (max-width: 900px)": {
               width: "50vw",
             },
@@ -75,10 +79,7 @@ export default function CustomerTab() {
             flexDirection: "column",
             gap: "1rem",
             width: "30%",
-            height:
-              filteredCustomers.length > MAX_CARDS_WITHOUT_SCROLL
-                ? "75vh"
-                : "auto",
+            height: containerHeight,
             overflowY:
               filteredCustomers.length > MAX_CARDS_WITHOUT_SCROLL
                 ? "auto"
