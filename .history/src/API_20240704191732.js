@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const API_URL = `https://cgifs-portfolio-management-backend.vercel.app`;
-//"http://localhost:5000";
+const API_URL = "http://localhost:5000";
 
 const api = axios.create({
   baseURL: API_URL,
