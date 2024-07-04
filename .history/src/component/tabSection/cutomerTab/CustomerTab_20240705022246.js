@@ -6,7 +6,6 @@ import MapBox from "./CustomerDetailsMap";
 import { useQuery } from "@tanstack/react-query";
 import { getAllMembers } from "../../../API";
 import ReactSearchBox from "react-search-box";
-import useDebounce from "../../../hooks/useDebounce";
 
 export default function CustomerTab() {
   const [searchTerm, setSearchTerm] = useState("");
